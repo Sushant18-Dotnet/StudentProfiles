@@ -1,0 +1,48 @@
+﻿@model List<StudentProfile.Models.Student>
+<h1>Students List </h1>
+<table class="table">
+
+    <thead>
+        <tr>
+            
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Subscribed</th>
+            <th>Profile Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.phone</td>
+                <td>@student.subscribed</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(student.ProfileImage))
+                    {
+                        <img src="@Url.Content("~/images/" + student.ProfileImage)" alt="Profile Image" width="75" height="75" />
+                    }
+                    else
+                    {
+                        <span>No image</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Students" asp-action="Edit" asp-route-id="@student.id">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-controller="Students" asp-action="Delete" asp-route-id="@student.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>

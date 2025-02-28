@@ -1,0 +1,35 @@
+﻿@model StudentProfile.Models.StudentsViewModel
+
+<h1>Add Students Profile</h1>
+
+<form method="post" enctype="multipart/form-data">
+<div class="mt-3">
+    <label class="form-label"> Name</label>
+    <input type="text" class="form-control" asp-for="Name" />
+</div>
+<div class="mt-3">
+    <label class="form-label"> Email</label>
+    <input type="email" class="form-control" asp-for="Email" />
+</div>
+
+    <div class="form-group">
+        <label for="ProfileImages">Profile Image</label>
+        <input type="file" id="ProfileImages" name="ProfileImages" class="form-control" asp-for="ProfileImages" />
+    </div>
+
+<div class="mt-3">
+    <label class="form-label">Phone</label>
+    <input type="text" class="form-control" asp-for="phone" />
+</div>
+
+<div class="mt-3">
+
+    <input type="checkbox" class="form-check-input" id="Subcribed" asp-for="subscribed" />
+    <label class="form-label" for="Subcribed"> Subcribed</label>
+</div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+
+</form>

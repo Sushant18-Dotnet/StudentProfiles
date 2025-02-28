@@ -1,0 +1,48 @@
+﻿@model StudentProfile.Models.Student
+
+
+<h1>Are You Sure You Want to Delete ?</h1>
+<form method="post" enctype="multipart/form-data">
+    <div class="mt-3">
+        <label class="form-label"> id</label>
+        <input type="text" class="form-control" asp-for="id" readonly />
+    </div>
+    <div class="mt-3">
+        <label class="form-label"> Name</label>
+        <input type="text" class="form-control" asp-for="Name" />
+    </div>
+    <div class="mt-3">
+        <label class="form-label"> Email</label>
+        <input type="email" class="form-control" asp-for="Email" />
+    </div>
+
+    <div class="mt-3">
+
+        <img src="@Url.Content("~/images/" + Model.ProfileImage)" alt="Profile Image" width="100" height="100" />
+    </div>
+
+    <div class="form-group">
+        <label for="ProfileImages">Profile Image</label>
+        <input type="file" id="ProfileImages" name="ProfileImages" class="form-control" asp-for="ProfileImages" />
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Phone</label>
+        <input type="text" class="form-control" asp-for="phone" />
+    </div>
+
+    <div class="mt-3">
+
+        <input type="checkbox" class="form-check-input" id="Subcribed" asp-for="subscribed" />
+        <label class="form-label" for="Subcribed"> Subcribed</label>
+    </div>
+    <div class="mt-3">
+
+        <label class="form-label">Phone</label>
+        <input type="text" class="form-control" asp-for="phone" />
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn-danger">Delete</button>
+    </div>
+</form>
